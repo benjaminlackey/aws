@@ -4,11 +4,15 @@
 wget https://repo.anaconda.com/archive/Anaconda3-2020.07-Linux-x86_64.sh
 bash Anaconda3-2020.07-Linux-x86_64.sh
 
-# Append this line to .bashrc to prepend anaconda to $PATH
-echo "" >> ~/.bashrc
-echo "------------ Anaconda --------------" >> ~/.bashrc
-echo "export PATH=/home/ubuntu/anaconda3/bin:$PATH" >> ~/.bashrc
-source ~/.bashrc
+# # Append this line to .bashrc to prepend anaconda to $PATH
+# echo "" >> ~/.bashrc
+# echo "------------ Anaconda --------------" >> ~/.bashrc
+# echo "export PATH=/home/ubuntu/anaconda3/bin:$PATH" >> ~/.bashrc
+
+# Anaconda path will be added to .bashrc file. Source it:
+# The "." does the same thing as "source". "." is part of sh, "source" is from csh that was pulled into bash
+# See: https://stackoverflow.com/questions/670191/getting-a-source-not-found-error-when-using-source-in-a-bash-script
+. ~/.bashrc
 
 echo "------------------------------------------------------------"
 echo "Check path and version of python:"
@@ -22,8 +26,6 @@ echo `python --version`
 # then runs 'venv.py venv' as a python script.)
 VENV_NAME="venv"
 python -m venv $VENV_NAME
-# The "." does the same thing as "source". "." is part of sh, "source" is from csh that was pulled into bash
-# See: https://stackoverflow.com/questions/670191/getting-a-source-not-found-error-when-using-source-in-a-bash-script
 . "$PWD/$VENV_NAME/bin/activate"
 
 # Note: A shell is created when the script runs, then exits when the script is finished.
