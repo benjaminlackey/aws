@@ -15,7 +15,7 @@ bash Anaconda3-2020.07-Linux-x86_64.sh
 . ~/.bashrc
 
 echo "------------------------------------------------------------"
-echo "Check path and version of python:"
+echo "Verify that Anaconda is the default version of python:"
 echo "------------------------------------------------------------"
 echo $PATH
 echo `which python`
